@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 alert('Ваше сообщение было отправлено!');
-                form.reset();  // Очистка формы после отправки
-                popup.style.display = 'none';  // Скрытие попапа
+                form.reset();
             } else {
                 alert('Ошибка при отправке сообщения. Пожалуйста, попробуйте позже.');
             }

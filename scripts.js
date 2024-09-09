@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const popup = document.querySelector('.popup');
     const contactUsButton = document.getElementById('contactUs');
-    const callUsButton = document.getElementById('callUs');
+    const callUsButton = document.getElementById('callUsMobile');
     const closeButton = document.querySelector('.popup-close');
     const form = document.querySelector('#contactForm');
 
     setTimeout(() => {
         popup.style.display = 'flex';
-    }, 3000);
+    }, 4000);
 
     contactUsButton.addEventListener('click', () => {
         window.location.href = '#contact-us';
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             top: document.querySelector('#contact-us').offsetTop,
             behavior: 'smooth'
         });
+        popup.style.display = 'none';
     });
 
     callUsButton.addEventListener('click', () => {
@@ -51,15 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (response.ok) {
-                alert('Заявка отправлена успешно!');
-                form.reset();
-                popup.style.display = 'none';
+                alert('Ваше сообщение было отправлено!');
+                form.reset();  // Очистка формы после отправки
+                popup.style.display = 'none';  // Скрытие попапа
             } else {
-                alert('Произошла ошибка при отправке заявки.');
+                alert('Ошибка при отправке сообщения. Пожалуйста, попробуйте позже.');
             }
         } catch (error) {
             console.error('Ошибка:', error);
-            alert('Произошла ошибка при отправке заявки.');
+            alert('Ошибка при отправке сообщения. Пожалуйста, попробуйте позже.');
         }
     });
 });

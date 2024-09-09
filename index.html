@@ -3,110 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ремонт холодильников в Сызрани. Гарантия до 12 месяцев, выезд мастера в течение 30 минут.">
-    <title>Ремонт холодильников в Сызрани</title>
+    <title>Ремонт Холодильников в Сызрани</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
+        <img src="logo.png" alt="Логотип компании" id="logo">
         <h1>Ремонт Холодильников в Сызрани</h1>
         <p>Гарантия до 12 месяцев | Ремонт у вас дома в день обращения | Выезд мастера в течение 30 минут | Сертифицированные запчасти</p>
+        <a href="#contact-form" class="button">Оставить заявку</a>
     </header>
     
     <main>
-        <section id="service-request">
+        <section id="services">
+            <h2>Наши услуги</h2>
+            <ul>
+                <li>Холодильники не включаются - Исправим за 20-30 минут</li>
+                <li>Шумит, стучит - Исправим за 30-60 минут</li>
+                <li>Подтекание воды - Исправим за 40 минут</li>
+                <li>Не морозит - Исправим за 35 минут</li>
+                <li>Перемораживает - Исправим за 40-60 минут</li>
+                <li>Нет освещения - Исправим за 40 минут</li>
+                <li>Другая проблема - Выезд мастера в течение 30 минут</li>
+            </ul>
+        </section>
+
+        <section id="contact-form">
             <h2>Оставьте заявку</h2>
-            <form id="request-form">
+            <form action="submit_form.php" method="post">
                 <label for="name">Ваше имя *</label>
                 <input type="text" id="name" name="name" required>
                 
                 <label for="phone">Номер телефона *</label>
                 <input type="tel" id="phone" name="phone" required>
                 
-                <label for="issue">Какая у вас проблема?</label>
-                <select id="issue" name="issue">
-                    <option value="шумит">Шумит, стучит</option>
-                    <option value="подтекание">Подтекание воды</option>
-                    <option value="не морозит">Не морозит</option>
-                    <option value="перемораживает">Перемораживает</option>
-                    <option value="не включается">Не включается</option>
-                    <option value="нет освещения">Нет освещения</option>
-                    <option value="другая">Не нашел свою проблему</option>
+                <label for="problem">Какая у вас проблема?</label>
+                <select id="problem" name="problem">
+                    <option value="Не включается">Не включается</option>
+                    <option value="Шумит, стучит">Шумит, стучит</option>
+                    <option value="Подтекание воды">Подтекание воды</option>
+                    <option value="Не морозит">Не морозит</option>
+                    <option value="Перемораживает">Перемораживает</option>
+                    <option value="Нет освещения">Нет освещения</option>
+                    <option value="Другая проблема">Другая проблема</option>
                 </select>
                 
-                <button type="submit">Оставить заявку</button>
-            </form>
-        </section>
-
-        <section id="services">
-            <h2>Наши услуги</h2>
-            <ul>
-                <li>Бытовые холодильники</li>
-                <li>Промышленные холодильники</li>
-                <li>Холодильные оборудования</li>
-                <li>Морозильные камеры</li>
-                <li>Торговые холодильники</li>
-            </ul>
-        </section>
-
-        <section id="cost-calculator">
-            <h2>Рассчитайте стоимость ремонта онлайн</h2>
-            <form id="calculator-form">
-                <label for="repair-type">Выберите неисправность</label>
-                <select id="repair-type" name="repair-type">
-                    <option value="не включается">Не включается</option>
-                    <option value="шумит">Шумит, стучит</option>
-                    <option value="подтекание">Подтекание воды</option>
-                    <option value="не морозит">Не морозит</option>
-                    <option value="перемораживает">Перемораживает</option>
-                    <option value="не работает морозилка">Не работает морозилка</option>
-                    <option value="другая">Другая причина</option>
-                </select>
-                
-                <label for="comment">Комментарий (необязательно)</label>
-                <textarea id="comment" name="comment"></textarea>
-                
-                <label for="phone-calculator">Номер телефона *</label>
-                <input type="tel" id="phone-calculator" name="phone-calculator" required>
-                
-                <button type="submit">Рассчитать стоимость</button>
+                <button type="submit">Отправить заявку</button>
             </form>
         </section>
 
         <section id="reviews">
-            <h2>Отзывы клиентов</h2>
-            <article>
-                <h3>Максим</h3>
-                <p>Здравствуйте. В субботу оставил заявку на ремонт холодильника, через час приехали 2 мастера. Через десять минут поставили...</p>
-                <a href="#">Подробнее</a>
-            </article>
-            <article>
-                <h3>Светлана</h3>
-                <p>Хочу поблагодарить мастера по имени Андрей, все починил, не дорого. Всем у кого проблемы с холодильником рекомендую.</p>
-            </article>
-            <article>
-                <h3>Ольга</h3>
-                <p>Доброго всем дня. Приезжали Ваши ребята к нам на пищевую базу по улице Декабристов в воскресенье, была очень...</p>
-                <a href="#">Подробнее</a>
-            </article>
-        </section>
-
-        <section id="about">
-            <h2>О компании</h2>
-            <p>Компания «РемонтТех» осуществляет ремонт бытовой техники в Сызрани более 10 лет. Мы на 100% уверены в качестве своих услуг и компетентности персонала. После ремонта вы получаете официальную гарантию на срок до 12 месяцев и техническую поддержку.</p>
-            <p>Рабочие часы: 9:00 - 22:00 без выходных</p>
+            <h2>Отзывы</h2>
+            <div class="review">
+                <p>Максим: Здравствуйте. В субботу оставил заявку на ремонт холодильника, через час приехали 2 мастера. Через десять минут поставили.</p>
+            </div>
+            <div class="review">
+                <p>Светлана: Хочу поблагодарить мастера по имени Андрей, все починил, не дорого. Всем у кого проблемы с холодильником рекомендую.</p>
+            </div>
+            <div class="review">
+                <p>Ольга: Доброго всем дня. Приезжали Ваши ребята к нам на пищевую базу по улице Декабристов в воскресенье, была очень хорошая работа.</p>
+            </div>
         </section>
     </main>
 
     <footer>
-        <section id="contact">
-            <h2>Контакты</h2>
-            <p>Телефоны: 89270295842, 89377991036, 89171130290, 89626102868</p>
-            <p>Телеграмм и чат: <a href="https://t.me/FermValleyBot">FermValleyBot</a></p>
-            <p>Телеграм чат ID: -1002396877462</p>
-        </section>
-        <p>&copy; 2024 РемонтТех. Все права защищены.</p>
+        <p>&copy; 2024 Ремонт Холодильников в Сызрани. Все права защищены.</p>
+        <p>Режим работы: 9:00 - 22:00 без выходных</p>
+        <p>Телефон: <a href="tel:+89270295842">+7 927 029 58 42</a>, <a href="tel:+89377991036">+7 937 799 10 36</a>, <a href="tel:+89171130290">+7 917 113 02 90</a>, <a href="tel:+89626102868">+7 962 610 28 68</a></p>
     </footer>
+
     <script src="scripts.js"></script>
 </body>
 </html>

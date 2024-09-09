@@ -1,125 +1,166 @@
-/* Основные стили */
 body {
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-    background-color: #000;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #000;
+    color: #fff;
 }
 
-.header-container {
-    background-color: #333;
+header {
+    background-color: #222;
     padding: 20px;
     text-align: center;
 }
 
-h1 {
+header h1 {
     margin: 0;
-    font-size: 2.5em;
     color: #fff;
-    word-wrap: break-word; /* Для предотвращения выхода текста за границы */
+    font-size: 2rem;
+    overflow-wrap: break-word;
 }
 
 main {
     padding: 20px;
 }
 
-section {
+.services, .why-us, .contact-us {
     margin-bottom: 20px;
 }
 
-.service-card {
-    background-color: #222;
+.services h2, .why-us h2, .contact-us h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-item {
+    background: #333;
     border-radius: 15px;
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    width: 200px;
     text-align: center;
 }
 
-.service-card img {
-    width: 100%;
-    border-radius: 10px;
+.service-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
 }
 
-.info ul {
+.why-us ul {
     list-style-type: none;
     padding: 0;
 }
 
-.info li {
-    background-color: #333;
-    border-radius: 10px;
+.why-us li {
+    background: #333;
+    border-radius: 15px;
     padding: 10px;
     margin-bottom: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
-.contact-form {
-    background-color: #222;
+.contact-us form {
+    background: #333;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.contact-form label {
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
     display: block;
-    margin-bottom: 10px;
-    font-size: 1.1em;
+    margin-bottom: 5px;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
+.form-group input, .form-group textarea {
+    width: calc(100% - 22px);
     padding: 10px;
-    margin-bottom: 20px;
     border-radius: 10px;
     border: 1px solid #444;
-    background-color: #333;
+    background: #222;
     color: #fff;
 }
 
-.contact-form button,
-.call-button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background-color: #444;
-    color: #fff;
+.form-group textarea {
+    height: 100px;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.btn-submit {
+    background: #444;
     border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
     cursor: pointer;
-    text-decoration: none;
+    font-size: 1rem;
+}
+
+.btn-submit:hover {
+    background: #555;
+}
+
+.call-or-contact {
     text-align: center;
-    font-size: 1em;
+    margin-top: 20px;
 }
 
-.contact-form button:hover,
-.call-button:hover {
-    background-color: #555;
-}
-
-.alternative-contact {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.alternative-contact p {
+.call-or-contact p {
     margin: 10px 0;
 }
 
-footer {
-    background-color: #333;
+.btn-call {
+    background: #444;
     color: #fff;
-    text-align: center;
-    padding: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
-@media (max-width: 600px) {
-    .header-container {
-        padding: 10px;
-    }
+.btn-call:hover {
+    background: #555;
+}
 
-    h1 {
-        font-size: 1.8em;
-    }
+.popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-popup {
+    background: #444;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 5px;
+    text-align: center;
+}
+
+.btn-popup:hover {
+    background: #555;
 }

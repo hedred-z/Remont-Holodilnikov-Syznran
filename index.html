@@ -5,96 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ремонт Холодильников Сызрань</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Подключаем Google Fonts для красивых шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1>РемонтХолодСызрань</h1>
-            <p>Добро пожаловать! Здесь вы найдете услуги по ремонту холодильников в Сызрани.</p>
+    <header>
+        <div class="header-container">
+            <h1>Ремонт Холодильников Сызрань</h1>
         </div>
     </header>
 
-    <section class="services">
-        <div class="container">
+    <main>
+        <section class="services">
             <h2>Наши Услуги</h2>
-            <div class="service-list">
-                <div class="service">
-                    <h3>Диагностика</h3>
-                    <p>Проведение полной диагностики холодильника для выявления неисправностей.</p>
-                </div>
-                <div class="service">
-                    <h3>Ремонт компрессора</h3>
-                    <p>Замена или ремонт компрессора для обеспечения эффективной работы холодильника.</p>
-                </div>
-                <div class="service">
-                    <h3>Замена термостата</h3>
-                    <p>Установка нового термостата для поддержания правильной температуры.</p>
-                </div>
-                <div class="service">
-                    <h3>Чистка конденсатора</h3>
-                    <p>Очистка конденсатора от пыли и загрязнений для улучшения теплоотведения.</p>
-                </div>
-                <div class="service">
-                    <h3>Ремонт уплотнителя двери</h3>
-                    <p>Замена или ремонт уплотнителя двери для предотвращения утечек холода.</p>
-                </div>
-                <div class="service">
-                    <h3>Заправка хладагента</h3>
-                    <p>Заправка хладагента для восстановления нормального уровня охлаждения.</p>
-                </div>
-                <div class="service">
-                    <h3>Ремонт электроники</h3>
-                    <p>Ремонт и замена электронной платы для устранения проблем с управлением.</p>
-                </div>
-                <div class="service">
-                    <h3>Обслуживание холодильников</h3>
-                    <p>Регулярное техническое обслуживание для предотвращения поломок.</p>
-                </div>
+            <div class="service-card">
+                <img src="images/repair1.jpg" alt="Диагностика и ремонт">
+                <h3>Диагностика и ремонт</h3>
+                <p>Полная диагностика и ремонт холодильников всех марок и моделей. Быстро и качественно!</p>
             </div>
-        </div>
-    </section>
+            <div class="service-card">
+                <img src="images/repair2.jpg" alt="Замена деталей">
+                <h3>Замена деталей</h3>
+                <p>Замена неисправных деталей и компонентов холодильника, таких как компрессоры, термостаты и др.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/repair3.jpg" alt="Чистка и обслуживание">
+                <h3>Чистка и обслуживание</h3>
+                <p>Регулярная чистка и профилактическое обслуживание для предотвращения поломок и продления срока службы.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/repair4.jpg" alt="Ремонт морозильных камер">
+                <h3>Ремонт морозильных камер</h3>
+                <p>Ремонт морозильных камер любой сложности, включая восстановление герметичности и работу с холодоагентами.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/repair5.jpg" alt="Установка и подключение">
+                <h3>Установка и подключение</h3>
+                <p>Установка и подключение новых холодильников. Проверка работы, настройка и тестирование всех функций.</p>
+            </div>
+        </section>
 
-    <section class="info">
-        <div class="container">
-            <h2>Почему выбрать нас?</h2>
+        <section class="info">
+            <h2>Почему выбирают нас?</h2>
             <ul>
-                <li>Гарантия до 2 лет на выполненные работы.</li>
+                <li>Гарантия до 2 лет на все виды ремонта.</li>
                 <li>Минимальная стоимость услуги от 500 рублей.</li>
-                <li>Бесплатный выезд при выполнении работы.</li>
-                <li>В случае отказа от работы взимается плата за выезд в размере 500 рублей.</li>
-                <li>Квалифицированные специалисты с многолетним опытом.</li>
-                <li>Быстрое реагирование и качественное выполнение ремонта.</li>
-                <li>Доступные цены и прозрачные расценки.</li>
+                <li>Бесплатный выезд при выполнении работы. В случае отказа от работы, стоимость выезда составляет 500 рублей.</li>
+                <li>Быстрый и надежный сервис, квалифицированные мастера.</li>
+                <li>Круглосуточная поддержка и обслуживание.</li>
+                <li>Использование только оригинальных запчастей.</li>
             </ul>
-        </div>
-    </section>
+        </section>
 
-    <section class="contact">
-        <div class="container">
-            <h2>Свяжитесь с нами</h2>
-            <form id="contactForm" class="contact-form">
-                <label for="name">Имя:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="phone">Контактный номер телефона:</label>
-                <input type="tel" id="phone" name="phone" required>
-                
-                <label for="message">Описание проблемы:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit" class="contact-button">Отправить заявку</button>
-            </form>
-            <p>Или <a href="tel:+89270295842" class="contact-button">Позвонить</a></p>
-            <p class="phone-number">89270295842</p>
-        </div>
-    </section>
+        <section class="contact">
+            <h2>Связаться с нами</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+
+                    <label for="phone">Контактный номер:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Введите ваш номер телефона" pattern="[+]?[0-9]{11,13}" title="Формат номера: +79123456789">
+
+                    <label for="message">Описание проблемы:</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Опишите вашу проблему"></textarea>
+
+                    <button type="submit" class="submit-button">Отправить заявку</button>
+                    <div class="alternative-contact">
+                        <p>Или</p>
+                        <a href="tel:+89270295842" class="call-button">Позвонить</a>
+                        <p>Телефон: <span>+8 (927) 029-58-42</span></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <div class="container">
-            <p>© 2024 РемонтХолодСызрань. Все права защищены.</p>
-        </div>
+        <p>&copy; 2024 Ремонт Холодильников Сызрань</p>
     </footer>
-    
+
     <script src="scripts.js"></script>
 </body>
 </html>

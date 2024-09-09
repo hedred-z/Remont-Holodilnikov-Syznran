@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('#contactForm');
+    const callButton = document.querySelector('#callUs');
+
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
@@ -26,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 alert('Ваше сообщение было отправлено!');
-                form.reset();
+                form.reset();  // Очистка формы после отправки
             } else {
                 alert('Ошибка при отправке сообщения. Пожалуйста, попробуйте позже.');
             }
@@ -34,5 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Ошибка:', error);
             alert('Ошибка при отправке сообщения. Пожалуйста, попробуйте позже.');
         }
+    });
+
+    callButton.addEventListener('click', () => {
+        window.location.href = 'tel:89270295842'; // Замените на ваш номер телефона
     });
 });

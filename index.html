@@ -1,123 +1,60 @@
-from zipfile import ZipFile
-import os
-
-# Directory to store the website files
-website_dir = '/mnt/data/website'
-
-# Ensure the directory exists
-os.makedirs(website_dir, exist_ok=True)
-
-# HTML content for the site
-html_content = """
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ремонт холодильников в Сызрани</title>
+    <title>Ремонт Холодильников Сызрань</title>
+    <meta name="description" content="Профессиональный ремонт холодильников в Сызрани. Оставьте заявку для получения консультации.">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f9;
-        }
-        h1 {
-            color: #333;
-        }
-        form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #218838;
-        }
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; }
+        form { display: flex; flex-direction: column; }
+        input, textarea { margin-bottom: 10px; padding: 10px; }
+        button { padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
     </style>
 </head>
 <body>
-    <h1>Ремонт холодильников в Сызрани</h1>
-    <p>Оставьте заявку на ремонт холодильника, и мы с вами свяжемся.</p>
-    
-    <form id="repairForm">
-        <label for="name">Ваше имя:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="phone">Номер телефона:</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="problem">Описание проблемы:</label>
-        <textarea id="problem" name="problem" rows="4" required></textarea>
-
-        <button type="submit">Отправить заявку</button>
-    </form>
-
+    <div class="container">
+        <h1>Ремонт Холодильников Сызрань</h1>
+        <p>Оставьте заявку, и мы свяжемся с вами для консультации и ремонта.</p>
+        <form id="requestForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="problem">Проблема:</label>
+            <textarea id="problem" name="problem" rows="4" required></textarea>
+            
+            <button type="submit">Отправить заявку</button>
+        </form>
+    </div>
     <script>
-        document.getElementById('repairForm').addEventListener('submit', function(e) {
+        document.getElementById('requestForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const problem = document.getElementById('problem').value;
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let problem = document.getElementById('problem').value;
 
-            fetch('https://sms.ru/sms/send', {
+            let message = `Имя: ${name}\nТелефон: ${phone}\nПроблема: ${problem}`;
+            
+            fetch('https://api.telegram.org/bot7369787047:AAGPnedvVkimxsNuK8tLVaqFPcZJ90rjSeE/sendMessage', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: new URLSearchParams({
-                    api_id: '4456F5EB-219E-DFF3-F8AC-600C956A7815',
-                    to: '+79270295842',
-                    msg: `Заявка от: ${name}, Телефон: ${phone}, Проблема: ${problem}`,
-                    json: 1
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: '-1002396877462',
+                    text: message
                 })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === "OK") {
-                    alert('Заявка успешно отправлена!');
-                } else {
-                    alert('Ошибка при отправке заявки. Попробуйте еще раз.');
-                }
-            })
-            .catch(error => {
-                alert('Ошибка: ' + error);
-            });
+            }).then(response => response.json())
+              .then(data => {
+                  alert('Ваша заявка отправлена!');
+                  document.getElementById('requestForm').reset();
+              })
+              .catch(error => console.error('Ошибка:', error));
         });
     </script>
 </body>
 </html>
-"""
-
-# Create HTML file
-html_path = os.path.join(website_dir, 'index.html')
-with open(html_path, 'w', encoding='utf-8') as file:
-    file.write(html_content)
-
-# Create ZIP archive
-zip_path = '/mnt/data/website_archive.zip'
-with ZipFile(zip_path, 'w') as zip_file:
-    zip_file.write(html_path, arcname='index.html')
-
-zip_path
-

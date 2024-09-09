@@ -2,14 +2,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const popup = document.querySelector('.popup');
     const contactUsButton = document.getElementById('contactUs');
     const callUsButton = document.getElementById('callUs');
+    const closeButton = document.querySelector('.popup-close');
     const form = document.querySelector('#contactForm');
 
-    // Показать всплывающее окно через 3 секунды после загрузки страницы
     setTimeout(() => {
         popup.style.display = 'flex';
     }, 3000);
 
-    // Обработчик отправки формы
+    contactUsButton.addEventListener('click', () => {
+        window.location.href = '#contact-us';
+        window.scrollTo({
+            top: document.querySelector('#contact-us').offsetTop,
+            behavior: 'smooth'
+        });
+    });
+
+    callUsButton.addEventListener('click', () => {
+        popup.style.display = 'none';
+        window.location.href = 'tel:+89270295842';
+    });
+
+    closeButton.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
@@ -19,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const issue = formData.get('issue');
 
         const message = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nПроблема: ${issue}`;
-        const telegramBotToken = '7369787047:AAGPnedvVkimxsNuK8tLVaqFPcZJ90rjSeE'; // Ваш API токен
-        const telegramChatId = '-1002396877462'; // Ваш чат ID
+        const telegramBotToken = '7369787047:AAGPnedvVkimxsNuK8tLVaqFPcZJ90rjSeE';
+        const telegramChatId = '-1002396877462';
 
         try {
             const response = await fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
@@ -36,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 alert('Заявка отправлена успешно!');
-                form.reset(); // Очистить форму
+                form.reset();
+                popup.style.display = 'none';
             } else {
                 alert('Произошла ошибка при отправке заявки.');
             }
@@ -44,15 +61,5 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Ошибка:', error);
             alert('Произошла ошибка при отправке заявки.');
         }
-    });
-
-    // Показать форму для связи при нажатии на кнопку "Связаться с нами"
-    contactUsButton.addEventListener('click', () => {
-        window.location.href = '#contact-us';
-    });
-
-    // Открыть приложение для звонков при нажатии на кнопку "Позвонить"
-    callUsButton.addEventListener('click', () => {
-        window.location.href = 'tel:+89270295842';
     });
 });

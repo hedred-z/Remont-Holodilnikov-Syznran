@@ -39,6 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     callButton.addEventListener('click', () => {
-        window.location.href = 'tel:89270295842'; // Замените на ваш номер телефона
+        window.location.href = 'tel:+89270295842'; // Заменен на реальный номер телефона
     });
 });

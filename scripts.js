@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const phone = formData.get('phone');
         const issue = formData.get('issue');
 
-        const message = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nПроблема: ${issue}`;
+        const message = `Заявка от Бота №1:\nИмя: ${name}\nТелефон: ${phone}\nПроблема: ${issue}`;
         const telegramBotToken = '7369787047:AAGPnedvVkimxsNuK8tLVaqFPcZJ90rjSeE';
         const telegramChatId = '-1002396877462';
 

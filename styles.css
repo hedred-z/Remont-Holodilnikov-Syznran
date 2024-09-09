@@ -96,7 +96,7 @@ textarea {
     resize: vertical;
 }
 
-.custom-text {
-    margin-top: 20px;
+.or-text {
     font-size: 16px;
+    margin: 10px 0;
 }

@@ -5,56 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ремонт Холодильников Сызрань</title>
     <meta name="description" content="Профессиональный ремонт холодильников в Сызрани. Оставьте заявку для получения консультации.">
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { text-align: center; }
-        form { display: flex; flex-direction: column; }
-        input, textarea { margin-bottom: 10px; padding: 10px; }
-        button { padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
-        button:hover { background-color: #45a049; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Ремонт Холодильников Сызрань</h1>
-        <p>Оставьте заявку, и мы свяжемся с вами для консультации и ремонта.</p>
-        <form id="requestForm">
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="phone">Телефон:</label>
-            <input type="tel" id="phone" name="phone" required>
-            
-            <label for="problem">Проблема:</label>
-            <textarea id="problem" name="problem" rows="4" required></textarea>
-            
-            <button type="submit">Отправить заявку</button>
-        </form>
-    </div>
-    <script>
-        document.getElementById('requestForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            let name = document.getElementById('name').value;
-            let phone = document.getElementById('phone').value;
-            let problem = document.getElementById('problem').value;
-
-            let message = `Имя: ${name}\nТелефон: ${phone}\nПроблема: ${problem}`;
-            
-            fetch('https://api.telegram.org/bot7369787047:AAGPnedvVkimxsNuK8tLVaqFPcZJ90rjSeE/sendMessage', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    chat_id: '-1002396877462',
-                    text: message
-                })
-            }).then(response => response.json())
-              .then(data => {
-                  alert('Ваша заявка отправлена!');
-                  document.getElementById('requestForm').reset();
-              })
-              .catch(error => console.error('Ошибка:', error));
-        });
-    </script>
+    <header>
+        <div class="container">
+            <h1>Ремонт Холодильников Сызрань</h1>
+            <a href="#requestForm" class="button">Оставить заявку</a>
+        </div>
+    </header>
+    <main>
+        <section class="about">
+            <h2>О нас</h2>
+            <p>Мы специализируемся на ремонте холодильников в Сызрани с [год основания]. Наша цель — предоставить качественные услуги с гарантией. Опытные специалисты гарантируют надежный ремонт и высокий уровень обслуживания. Мы предлагаем быстрое реагирование, профессиональные услуги и гарантию на выполненные работы.</p>
+        </section>
+        <section class="faq">
+            <h2>Часто задаваемые вопросы (FAQ)</h2>
+            <dl>
+                <dt>Что делать, если холодильник не охлаждает?</dt>
+                <dd>Проверьте, подключен ли холодильник к электросети. Если подключен, возможно, проблема в компрессоре или фреоне. Рекомендуем обратиться к специалистам.</dd>
+                <dt>Как долго длится ремонт?</dt>
+                <dd>Время ремонта зависит от сложности проблемы. Обычно мы выполняем ремонт в течение 1-2 рабочих дней.</dd>
+                <dt>Есть ли у вас гарантия на ремонт?</dt>
+                <dd>Да, мы предоставляем гарантию на выполненные работы в течение [указать срок].</dd>
+                <dt>Как записаться на ремонт?</dt>
+                <dd>Просто заполните форму заявки на нашем сайте, и мы свяжемся с вами для уточнения деталей.</dd>
+            </dl>
+        </section>
+        <section class="contact">
+            <h2>Контакты</h2>
+            <p>Телефоны: 89270295842, 89377991036, 89171130290, 89626102868</p>
+            <a href="#requestForm" class="button">Оставить заявку</a>
+        </section>
+        <section class="reviews">
+            <h2>Отзывы</h2>
+            <p>«Отличная работа! Холодильник снова работает как новый. Очень довольна!» — Марина, Сызрань</p>
+            <p>«Быстро и качественно. Спасибо за оперативность!» — Алексей, Сызрань</p>
+        </section>
+        <section id="requestForm">
+            <h2>Форма заявки</h2>
+            <form>
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="problem">Проблема:</label>
+                <textarea id="problem" name="problem" rows="4" required></textarea>
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ремонт Холодильников Сызрань</p>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>

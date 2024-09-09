@@ -1,31 +1,48 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.carousel-content');
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    let index = 0;
+    const form = document.getElementById('contactForm');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем стандартное действие формы
 
-    function updateCarousel() {
-        const items = document.querySelectorAll('.carousel-content p');
-        const itemWidth = items[0].offsetWidth;
-        carousel.style.transform = `translateX(-${index * itemWidth}px)`;
-    }
+        // Получаем данные из формы
+        const formData = new FormData(form);
+        const data = {
+            name: formData.get('name'),
+            phone: formData.get('phone'),
+            message: formData.get('message')
+        };
 
-    prevButton.addEventListener('click', function() {
-        if (index > 0) {
-            index--;
-            updateCarousel();
-        }
-    });
+        // Формируем текст сообщения для Telegram
+        const text = `
+            Новый запрос:
+            Имя: ${data.name}
+            Телефон: ${data.phone}
+            Проблема: ${data.message}
+        `;
 
-    nextButton.addEventListener('click', function() {
-        const items = document.querySelectorAll('.carousel-content p');
-        if (index < items.length - 1) {
-            index++;
-            updateCarousel();
-        }
-    });
-
-    document.getElementById('callButton').addEventListener('click', function() {
-        window.location.href = 'tel:+89270295842';
+        // Отправляем запрос в Telegram бот
+        fetch(`https://api.telegram.org/bot7369787047:AAGPnedvVkimxsNuK8tLVaqFPcZJ90rjSeE/sendMessage`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id: '-1002396877462',
+                text: text
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                alert('Заявка отправлена успешно!');
+                form.reset(); // Сброс формы
+            } else {
+                alert('Произошла ошибка. Пожалуйста, попробуйте снова.');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            alert('Произошла ошибка. Пожалуйста, попробуйте снова.');
+        });
     });
 });

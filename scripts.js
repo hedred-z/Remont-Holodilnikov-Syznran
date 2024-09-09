@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
 
         // Отправляем запрос в Telegram бот
-        fetch(`https://api.telegram.org/bot7369787047:AAGPnedvVkimxsNuK8tLVaqFPcZJ90rjSeE/sendMessage`, {
+        fetch('https://api.telegram.org/bot7369787047:AAGPnedvVkimxsNuK8tLVaqFPcZJ90rjSeE/sendMessage', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -37,12 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Заявка отправлена успешно!');
                 form.reset(); // Сброс формы
             } else {
-                alert('Произошла ошибка. Пожалуйста, попробуйте снова.');
+                alert('Произошла ошибка при отправке заявки.');
+                console.error('Ошибка:', data);
             }
         })
         .catch(error => {
+            alert('Произошла ошибка при отправке заявки.');
             console.error('Ошибка:', error);
-            alert('Произошла ошибка. Пожалуйста, попробуйте снова.');
         });
     });
 });

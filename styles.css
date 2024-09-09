@@ -7,160 +7,116 @@ body {
 }
 
 header {
-    background-color: #222;
+    background: #333;
     padding: 20px;
     text-align: center;
 }
 
-header h1 {
+h1 {
     margin: 0;
-    color: #fff;
-    font-size: 2rem;
-    overflow-wrap: break-word;
+    font-size: 24px;
 }
 
 main {
     padding: 20px;
 }
 
-.services, .why-us, .contact-us {
+.services, .why-choose-us, .contact-us {
     margin-bottom: 20px;
 }
 
-.services h2, .why-us h2, .contact-us h2 {
+h2 {
     text-align: center;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
-.service-container {
+.service-box {
+    background: #222;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.service-item {
-    background: #333;
-    border-radius: 15px;
+.icon-service {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+button:hover {
+    background: #555;
+}
+
+.contact-us {
+    background: #222;
+    border-radius: 10px;
     padding: 20px;
-    margin: 10px;
-    width: 200px;
-    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.service-item img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-.why-us ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.why-us li {
-    background: #333;
-    border-radius: 15px;
-    padding: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.contact-us form {
-    background: #333;
-    border-radius: 15px;
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
+label {
     margin-bottom: 5px;
 }
 
-.form-group input, .form-group textarea {
-    width: calc(100% - 22px);
+input, textarea {
+    margin-bottom: 15px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid #444;
-    background: #222;
+    background: #333;
     color: #fff;
 }
 
-.form-group textarea {
+textarea {
     height: 100px;
-}
-
-.form-actions {
-    text-align: center;
-}
-
-.btn-submit {
-    background: #444;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.btn-submit:hover {
-    background: #555;
-}
-
-.call-or-contact {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.call-or-contact p {
-    margin: 10px 0;
-}
-
-.btn-call {
-    background: #444;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.btn-call:hover {
-    background: #555;
+    resize: vertical;
 }
 
 .popup {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #333;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.btn-popup {
-    background: #444;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 1rem;
-    margin: 5px;
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
     text-align: center;
+    position: relative;
 }
 
-.btn-popup:hover {
-    background: #555;
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
 }

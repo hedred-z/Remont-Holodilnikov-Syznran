@@ -3,112 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ремонт Холодильников в Сызрани</title>
+    <title>Ремонт Холодильников Сызрань</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <img src="logo.png" alt="Логотип компании" id="logo">
-            <h1>Ремонт Холодильников в Сызрани</h1>
-            <p>Гарантия до 12 месяцев | Ремонт у вас дома в день обращения | Выезд мастера в течение 30 минут | Сертифицированные запчасти</p>
-            <a href="#contact-form" class="button">Оставить заявку</a>
-        </div>
+        <h1>Добро пожаловать в РемонтХолодСызрань</h1>
+        <p>Здесь вы найдете услуги по ремонту холодильников в Сызрани.</p>
     </header>
-    
-    <main>
-        <section id="services">
-            <div class="container">
-                <h2>Наши услуги</h2>
-                <div class="service-grid">
-                    <div class="service">
-                        <i class="fas fa-plug"></i>
-                        <h3>Холодильники не включаются</h3>
-                        <p>Исправим за 20-30 минут</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Шумит, стучит</h3>
-                        <p>Исправим за 30-60 минут</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-water"></i>
-                        <h3>Подтекание воды</h3>
-                        <p>Исправим за 40 минут</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-temperature-low"></i>
-                        <h3>Не морозит</h3>
-                        <p>Исправим за 35 минут</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-temperature-high"></i>
-                        <h3>Перемораживает</h3>
-                        <p>Исправим за 40-60 минут</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>Нет освещения</h3>
-                        <p>Исправим за 40 минут</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-tools"></i>
-                        <h3>Другая проблема</h3>
-                        <p>Выезд мастера в течение 30 минут</p>
-                    </div>
-                </div>
+    <section class="services">
+        <h2>Наши Услуги</h2>
+        <div class="carousel">
+            <button class="carousel-button prev">&#10094;</button>
+            <div class="carousel-content">
+                <p>Ремонт компрессора</p>
+                <p>Замена термостата</p>
+                <p>Устранение утечек фреона</p>
+                <p>Ремонт или замена вентиляторов</p>
+                <p>Обслуживание и чистка конденсатора</p>
+                <p>Ремонт электрической части</p>
+                <p>Замена уплотнителей дверей</p>
+                <p>Диагностика и устранение неисправностей</p>
             </div>
-        </section>
-
-        <section id="contact-form">
-            <div class="container">
-                <h2>Оставьте заявку</h2>
-                <form action="submit_form.php" method="post">
-                    <label for="name">Ваше имя *</label>
-                    <input type="text" id="name" name="name" required>
-                    
-                    <label for="phone">Номер телефона *</label>
-                    <input type="tel" id="phone" name="phone" value="+89270295842" readonly required>
-                    
-                    <label for="problem">Какая у вас проблема?</label>
-                    <select id="problem" name="problem">
-                        <option value="Не включается">Не включается</option>
-                        <option value="Шумит, стучит">Шумит, стучит</option>
-                        <option value="Подтекание воды">Подтекание воды</option>
-                        <option value="Не морозит">Не морозит</option>
-                        <option value="Перемораживает">Перемораживает</option>
-                        <option value="Нет освещения">Нет освещения</option>
-                        <option value="Другая проблема">Другая проблема</option>
-                    </select>
-                    
-                    <button type="submit">Отправить заявку</button>
-                </form>
-            </div>
-        </section>
-
-        <section id="reviews">
-            <div class="container">
-                <h2>Отзывы</h2>
-                <div class="review">
-                    <p>Максим: Здравствуйте. В субботу оставил заявку на ремонт холодильника, через час приехали 2 мастера. Через десять минут поставили.</p>
-                </div>
-                <div class="review">
-                    <p>Светлана: Хочу поблагодарить мастера по имени Андрей, все починил, не дорого. Всем у кого проблемы с холодильником рекомендую.</p>
-                </div>
-                <div class="review">
-                    <p>Ольга: Доброго всем дня. Приезжали Ваши ребята к нам на пищевую базу по улице Декабристов в воскресенье, была очень хорошая работа.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Ремонт Холодильников в Сызрани. Все права защищены.</p>
-            <p>Режим работы: 9:00 - 22:00 без выходных</p>
-            <p>Телефон: <a href="tel:+89270295842">+7 927 029 58 42</a></p>
+            <button class="carousel-button next">&#10095;</button>
         </div>
+    </section>
+    <section class="info">
+        <h2>Почему выбрать нас?</h2>
+        <ul>
+            <li><strong>Гарантия до 2 лет</strong> на выполненные работы.</li>
+            <li><strong>Бесплатный выезд</strong> при выполнении работы. В случае отказа от работы стоимость выезда составляет 500 рублей.</li>
+            <li><strong>Стоимость минимальной услуги от 500 рублей.</strong></li>
+            <li><strong>Профессиональные мастера</strong> с большим опытом работы.</li>
+            <li><strong>Оперативное реагирование</strong> и удобное время для вас.</li>
+        </ul>
+    </section>
+    <section class="contact">
+        <h2>Свяжитесь с нами</h2>
+        <p>Вы можете позвонить нам по номеру:</p>
+        <button id="callButton">Позвонить</button>
+        <p class="phone-number">89270295842</p>
+    </section>
+    <footer>
+        <p>© 2024 РемонтХолодСызрань. Все права защищены.</p>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>

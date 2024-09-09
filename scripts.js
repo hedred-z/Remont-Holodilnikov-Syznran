@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('#contactForm');
-    const callButton = document.querySelector('#callUs');
+    const callUsButton = document.querySelector('#callUs');
+    const popup = document.querySelector('.popup');
+    const popupClose = document.querySelector('.popup-close');
 
+    // Отправка формы
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
@@ -38,7 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    callButton.addEventListener('click', () => {
-        window.location.href = 'tel:+89270295842'; // Заменен на реальный номер телефона
+    // Обработка кнопки "Позвонить"
+    callUsButton.addEventListener('click', () => {
+        window.location.href = 'tel:+789270295842';
+    });
+
+    // Закрытие попапа
+    popupClose.addEventListener('click', () => {
+        popup.style.display = 'none';
     });
 });

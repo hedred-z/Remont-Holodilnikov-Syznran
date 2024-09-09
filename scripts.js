@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButton = document.querySelector('.popup-close');
     const form = document.querySelector('#contactForm');
 
-    setTimeout(() => {
-        popup.style.display = 'flex';
-    }, 4000);
+    // Удаляем таймаут, который вызывает отображение попапа
+    // setTimeout(() => {
+    //     popup.style.display = 'flex';
+    // }, 4000);
 
     contactUsButton.addEventListener('click', () => {
         window.location.href = '#contact-us';

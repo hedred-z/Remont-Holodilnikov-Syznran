@@ -4,30 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const callUsButton = document.getElementById('callUsMobile');
     const closeButton = document.querySelector('.popup-close');
     const form = document.querySelector('#contactForm');
-
-    // Удаляем таймаут, который вызывает отображение попапа
-    // setTimeout(() => {
-    //     popup.style.display = 'flex';
-    // }, 4000);
-
-    contactUsButton.addEventListener('click', () => {
-        window.location.href = '#contact-us';
-        window.scrollTo({
-            top: document.querySelector('#contact-us').offsetTop,
-            behavior: 'smooth'
-        });
-        popup.style.display = 'none';
-    });
-
-    callUsButton.addEventListener('click', () => {
-        popup.style.display = 'none';
-        window.location.href = 'tel:+89270295842';
-    });
-
-    closeButton.addEventListener('click', () => {
-        popup.style.display = 'none';
-    });
-
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 

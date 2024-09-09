@@ -67,7 +67,6 @@ button:hover {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
 }
 
 form {
@@ -97,6 +96,48 @@ textarea {
 }
 
 .or-text {
-    font-size: 16px;
+    text-align: center;
+    font-size: 18px;
     margin: 10px 0;
+}
+
+.popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000;
+}
+
+button#contactUs, button#callUsMobile {
+    background: #444;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+button#contactUs:hover, button#callUsMobile:hover {
+    background: #555;
 }

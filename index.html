@@ -3,109 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ремонт Холодильников в Сызрани</title>
+    <title>Ремонт холодильников в Сызрани</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Ремонт Холодильников в Сызрани</h1>
+        <h1>Ремонт холодильников в Сызрани</h1>
     </header>
-
+    
     <main>
         <section class="services">
-            <h2>Наши Услуги</h2>
-            <div class="service-container">
-                <div class="service-item">
-                    <img src="icons/repair-compressor.png" alt="Ремонт компрессора">
-                    <p>Ремонт компрессора</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/thermostat.png" alt="Замена термостата">
-                    <p>Замена термостата</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/cleaning.png" alt="Чистка системы охлаждения">
-                    <p>Чистка системы охлаждения</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/electrical-repair.png" alt="Ремонт электрических компонентов">
-                    <p>Ремонт электрических компонентов</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/seal-replacement.png" alt="Замена уплотнителей дверей">
-                    <p>Замена уплотнителей дверей</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/defrosting.png" alt="Ремонт системы размораживания">
-                    <p>Ремонт системы размораживания</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/temperature-calibration.png" alt="Калибровка температуры">
-                    <p>Калибровка температуры</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/maintenance.png" alt="Обслуживание холодильных установок">
-                    <p>Обслуживание холодильных установок</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/gas-recharge.png" alt="Пополнение хладагента">
-                    <p>Пополнение хладагента</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/fan-repair.png" alt="Ремонт вентилятора">
-                    <p>Ремонт вентилятора</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/leak-detection.png" alt="Обнаружение утечек">
-                    <p>Обнаружение утечек</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/control-panel.png" alt="Ремонт панели управления">
-                    <p>Ремонт панели управления</p>
-                </div>
+            <h2>Наши услуги</h2>
+            <div class="service-box">
+                <i class="icon-service"></i>
+                <h3>Ремонт компрессоров</h3>
+            </div>
+            <div class="service-box">
+                <i class="icon-service"></i>
+                <h3>Замена термостатов</h3>
+            </div>
+            <div class="service-box">
+                <i class="icon-service"></i>
+                <h3>Чистка и дезинфекция</h3>
+            </div>
+            <div class="service-box">
+                <i class="icon-service"></i>
+                <h3>Ремонт дверей и уплотнителей</h3>
+            </div>
+            <div class="service-box">
+                <i class="icon-service"></i>
+                <h3>Замена трубок и конденсаторов</h3>
+            </div>
+            <div class="service-box">
+                <i class="icon-service"></i>
+                <h3>Восстановление холодильного агента</h3>
+            </div>
+            <div class="service-box">
+                <i class="icon-service"></i>
+                <h3>Проверка и настройка работы</h3>
+            </div>
+            <div class="service-box">
+                <i class="icon-service"></i>
+                <h3>Ремонт электроники</h3>
             </div>
         </section>
-
-        <section class="why-us">
+        
+        <section class="why-choose-us">
             <h2>Почему выбирают нас</h2>
             <ul>
-                <li>Гарантия до 2 лет на все виды работ</li>
-                <li>Минимальная стоимость услуг от 500 рублей</li>
-                <li>Бесплатный выезд при выполнении работы</li>
-                <li>Квалифицированные мастера с многолетним опытом</li>
-                <li>Скорость выполнения работ в удобное для вас время</li>
+                <li>Гарантия до 2 лет на выполненные работы.</li>
+                <li>Бесплатный выезд по Сызрани при выполнении работ.</li>
+                <li>Высококвалифицированные специалисты.</li>
+                <li>Оперативное реагирование на заявки.</li>
+                <li>Честные и прозрачные цены.</li>
+                <li>Наличие современного оборудования и запчастей.</li>
             </ul>
         </section>
-
-        <section class="contact-us">
+        
+        <section id="contact-us" class="contact-us">
             <h2>Связаться с нами</h2>
             <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Имя:</label>
-                    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Контактный номер:</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Ваш номер телефона" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Описание проблемы:</label>
-                    <textarea id="message" name="message" placeholder="Опишите вашу проблему" required></textarea>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn-submit">Отправить заявку</button>
-                </div>
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="phone">Контактный номер телефона:</label>
+                <input type="tel" id="phone" name="phone" required pattern="[+]?[0-9]{10,15}" placeholder="+7XXXXXXXXXX">
+                
+                <label for="issue">Описание проблемы:</label>
+                <textarea id="issue" name="issue" required></textarea>
+                
+                <button type="submit">Отправить заявку</button>
             </form>
-            <div class="call-or-contact">
-                <p>Или</p>
-                <a href="tel:+89270295842" class="btn-call">Позвонить</a>
-            </div>
         </section>
     </main>
-
-    <div class="popup">
-        <button class="btn-popup" id="contactUs">Связаться с нами</button>
-        <button class="btn-popup" id="callUs">Позвонить</button>
+    
+    <div class="popup" style="display: none;">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <button id="contactUs">Оставить заявку</button>
+            <button id="callUs">Позвонить</button>
+        </div>
     </div>
 
     <script src="scripts.js"></script>

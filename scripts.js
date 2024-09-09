@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const popup = document.querySelector('.popup');
-    const contactUsButton = document.getElementById('contactUs');
-    const callUsButton = document.getElementById('callUsMobile');
-    const closeButton = document.querySelector('.popup-close');
     const form = document.querySelector('#contactForm');
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
